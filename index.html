@@ -7,90 +7,144 @@
   <title>Document</title>
 </head>
 
-
+<!-- 
+  Общие пару советов:
+  1) Используй форматирование в проектах, т.к. так они будут лучше читаться. Можно сделать автоматическое форматирование кода на сохранение файла, тогда у тебя будет единый стиль в проекте, не будет разноного количества отступов на строчках, лишних пробелов и тому подобного.
+  2) Конечно же не используй таблицы :D
+  3) Старайся делать все в едином стиле и по максимуму переиспользовать классы, т.к. это ускорит работу над проектом, а также улучшит его читаемость.
+-->
 
 <body>
-
-
-
-
-
-<div class="page-frame"> 
-
-
-<div class="all">
-
-<div class="allleft">
-<img class="logo" src="sourse/images/Lolopizza.png" alt="#">
-
-<div class="text-block">
-<p class="pp">REACT PIZZA</p>
-<P class="PPP" >самая вкусная пицца во вселенной</P>
-</div>
-</div>
-
-<div class="allright">
-
-  <button class="buy-button">
-    <span class="price">520 ₽</span>
-  <img src="sourse/images/корзина1.png"alt="Корзина" class="cart-icon" />
-</button>
-
-</div>
-
-</div>
-  <header></header>
-
-
-
-
-  
-  <div class="container">
-  
-    <div class="left-box">
-  <div class="whatspi">
-  
-          <button>Все</button>
+  <div class="page-frame">
+    <div class="all">
+      <div class="allleft"> <!-- Название классов состоящие более, чем из 1 слова лучше делать через нижнее подчеркивание или в `camelCase` - то есть, например, `all_left` или `allLeft`, я бы порекомендовал все же первый вариант через нижнее подчеркивание. -->
+        <img class="logo" src="sourse/images/Lolopizza.png" alt="#">
+        <div class="text-block">
+          <p class="pp">REACT PIZZA</p>  <!-- Тут не самые понятные названия у классов, над этим на самом деле стоит думать получше, назвать его например `title`, а то, что под ним - `subtitle`. Названия классов желательно делать человекопонятными. -->
+          <P class="PPP">самая вкусная пицца во вселенной</P>
+        </div>
+      </div>
+      <div class="allright">  <!-- Тут та же история с наименованием классов через "_". -->
+        <button class="buy-button">
+          <span class="price">520 ₽</span>
+          <img src="sourse/images/корзина1.png" alt="Корзина" class="cart-icon" />  <!-- Круто, что задал `alt` и есть понятное название у класса, единственный момент - названия изображений, файлов и папок все же лучше делать на английском, придерживаясь единого стиля. -->
+        </button>
+      </div>
+    </div>
+    <header></header>  <!-- Не совсем понял, для чего тут пустой тег, возможно ты хотел все в него обернуть или просто забыл удалить, тут стоит просто быть повнимательнее, reivew (проверку кода) такое не проходит обычно. -->
+    <div class="container">
+      <div class="left-box">
+        <div class="whatspi">
+          <button>Все</button>  <!-- Кнопки для сортировки сделаны через `button` - тут лайк, вопросов нет. -->
           <button>Мясные</button>
           <button>Вегетарианская</button>
           <button>Гриль</button>
           <button>Острые</button>
           <button>Закрытые</button>
-  </div>
-    </div>
-    
-    <div class="right-box">
-  
-      <div class="dropdown">
-       <button class="dropbtn">Сортировка по: ▼</button>
-       <div class="dropdown-content">
-         <a href="#">популярности</a>
-         <a href="#">по цене</a>
-         <a href="#">по алфавиту</a>
-       </div>
+        </div>
+      </div>
+      <div class="right-box">
+        <div class="dropdown">
+          <button class="dropbtn">Сортировка по: ▼</button>
+          <div class="dropdown-content">
+            <a href="#">популярности</a>
+            <a href="#">по цене</a>
+            <a href="#">по алфавиту</a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  
-
-
-
-  <h1>Все пиццы</h1>
-  
+    <h1>Все пиццы</h1>
     <div class="card">
-  
       <div class="pi">
-        <img src="sourse/images/Чизбургер.png" alt="#">
+        <img src="sourse/images/Чизбургер.png" alt="#">  <!-- Тут не указан понятный `alt`, но если это сделано специально, т.к. не сильно много времени тратил на это - то окей. -->
         <p> Чизбургер - пицца </p>
-        <table>
-  
+        <table>  <!-- Такое обычно не делают через таблицы, как я и говорил, через них делают только сами таблицы и то не всегда. Здесь бы и обычные `div'ы` стилизованные подошли или что-то в этом духе.  -->
           <tr>
             <th>тонкое</th>
             <th> </th>
             <th>традиционное</th>
-  
           </tr>
-  
+          <tr>
+            <td>26 см</td>
+            <td>30 см</td>
+            <td>40 см</td>
+          </tr>
+        </table>
+        <div class="price">
+          <p>от 395</p>
+          <button class="my-button">+ Добавить</button>  <!-- Скорее не `my-button`, а `add_button` или `add_to_cart_button`. -->
+        </div>
+      </div>
+      <div class="pi">
+        <img src="sourse/images/Сырная.png" alt="#">
+        <p> Сырная </p>
+        <table>  <!-- Тут та же история по таблицам. -->
+          <tr>
+            <th>тонкое</th>
+            <th> </th>
+            <th>традиционное</th>
+          </tr>
+          <tr>
+            <td>26 см</td>
+            <td>30 см</td>
+            <td>40 см</td>
+          </tr>
+        </table>
+        <div class="price">
+          <p>от 450</p>
+          <button class="my-button">+ Добавить</button>
+        </div>
+      </div>
+      <div class="pi">
+        <img src="sourse/images/Креветки.png" alt="#">  <!-- `alt` и название файла изображения стоит делать на английском. -->
+        <p> Креветки по-азиатски </p>
+        <table>
+          <tr>
+            <th>тонкое</th>
+            <th> </th>
+            <th>традиционное</th>
+          </tr>
+          <tr>
+            <td>26 см</td>
+            <td>30 см</td>
+            <td>40 см</td>
+          </tr>
+        </table>
+        <div class="price">
+          <p>от 290</p>
+          <button class="my-button">+ Добавить</button>
+        </div>
+      </div>
+      <div class="pi">  <!-- Мне честно говоря такое название класса вообще ни о чем не сказало бы, но супер классно, что ты переиспользуешь классы, а не делаешь классы с одинаковыми свойствами, но разными названиями - лайк. -->
+        <img src="sourse/images/Сырный-цыпленон.png" alt="#">
+        <p> Сырный-цыпленон </p>
+        <table>
+          <tr>
+            <th>тонкое</th>
+            <th> </th>
+            <th>традиционное</th>
+          </tr>
+          <tr>
+            <td>26 см</td>
+            <td>30 см</td>
+            <td>40 см</td>
+          </tr>
+        </table>
+        <div class="price">
+          <p>от 385</p>
+          <button class="my-button">+ Добавить</button>
+        </div>
+      </div>
+      <div class="pi">
+        <img src="sourse/images/Чизбургер.png" alt="#">
+        <p> Чизбургер - пицца </p>
+        <table>
+          <tr>
+            <th>тонкое</th>
+            <th> </th>
+            <th>традиционное</th>
+          </tr>
           <tr>
             <td>26 см</td>
             <td>30 см</td>
@@ -101,9 +155,7 @@
           <p>от 395</p>
           <button class="my-button">+ Добавить</button>
         </div>
-  
       </div>
-  
       <div class="pi">
         <img src="sourse/images/Сырная.png" alt="#">
         <p> Сырная </p>
@@ -113,23 +165,17 @@
             <th> </th>
             <th>традиционное</th>
           </tr>
-  
           <tr>
             <td>26 см</td>
             <td>30 см</td>
             <td>40 см</td>
           </tr>
-  
         </table>
-  
         <div class="price">
           <p>от 450</p>
-  <button class="my-button">+ Добавить</button>
+          <button class="my-button">+ Добавить</button>
         </div>
-  
-  
       </div>
-  
       <div class="pi">
         <img src="sourse/images/Креветки.png" alt="#">
         <p> Креветки по-азиатски </p>
@@ -139,24 +185,17 @@
             <th> </th>
             <th>традиционное</th>
           </tr>
-  
           <tr>
             <td>26 см</td>
             <td>30 см</td>
             <td>40 см</td>
           </tr>
-  
-  
         </table>
         <div class="price">
           <p>от 290</p>
           <button class="my-button">+ Добавить</button>
         </div>
-  
-  
-  
       </div>
-  
       <div class="pi">
         <img src="sourse/images/Сырный-цыпленон.png" alt="#">
         <p> Сырный-цыпленон </p>
@@ -165,135 +204,20 @@
             <th>тонкое</th>
             <th> </th>
             <th>традиционное</th>
-          </tr>
-  
           <tr>
             <td>26 см</td>
             <td>30 см</td>
             <td>40 см</td>
           </tr>
+          </tr>
         </table>
-  
         <div class="price">
           <p>от 385</p>
           <button class="my-button">+ Добавить</button>
         </div>
-  
-  
-  
       </div>
-  
-      <div class="pi">
-        <img src="sourse/images/Чизбургер.png" alt="#">
-        <p> Чизбургер - пицца </p>
-        <table>
-          <tr>
-            <th>тонкое</th>
-            <th> </th>
-            <th>традиционное</th>
-          </tr>
-  
-          <tr>
-            <td>26 см</td>
-            <td>30 см</td>
-            <td>40 см</td>
-          </tr>
-        </table>
-  
-        <div class="price">
-          <p>от 395</p>
-          <button class="my-button">+ Добавить</button>
-        </div>
-  
-  
-      </div>
-  
-      <div class="pi">
-        <img src="sourse/images/Сырная.png" alt="#">
-        <p> Сырная </p>
-  
-        <table>
-          <tr>
-            <th>тонкое</th>
-            <th> </th>
-            <th>традиционное</th>
-          </tr>
-  
-          <tr>
-            <td>26 см</td>
-            <td>30 см</td>
-            <td>40 см</td>
-          </tr>
-        </table>
-  
-        <div class="price">
-          <p>от 450</p>
-          <button class="my-button">+ Добавить</button>
-        </div>
-  
-  
-      </div>
-  
-      <div class="pi">
-        <img src="sourse/images/Креветки.png" alt="#">
-        <p> Креветки по-азиатски </p>
-        <table>
-          <tr>
-            <th>тонкое</th>
-            <th> </th>
-            <th>традиционное</th>
-          </tr>
-  
-          <tr>
-            <td>26 см</td>
-            <td>30 см</td>
-            <td>40 см</td>
-          </tr>
-        </table>
-  
-        <div class="price">
-          <p>от 290</p>
-          <button class="my-button">+ Добавить</button>
-        </div>
-  
-  
-  
-      </div>
-  
-      <div class="pi">
-        <img src="sourse/images/Сырный-цыпленон.png" alt="#">
-  
-        <p> Сырный-цыпленон </p>
-        <table>
-          <tr>
-            <th>тонкое</th>
-            <th> </th>
-            <th>традиционное</th>
-          <tr>
-            <td>26 см</td>
-            <td>30 см</td>
-            <td>40 см</td>
-          </tr>
-          </tr>
-        </table>
-  
-        <div class="price">
-          <p>от 385</p>
-          <button class="my-button">+ Добавить</button>
-        </div>
-  
-  
-      </div>
-  
     </div>
-</div>
-
-
-
-
-
+  </div>
 </body>
-
-
 
 </html>
